@@ -1,5 +1,4 @@
 import pickle
-import re
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -30,7 +29,7 @@ reg.fit(X_train, y_train)
 # running predictions on test set
 pred = reg.predict(X_test)
 
-print(reg.predict([[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]]))
+print(reg.predict([[100,100,100,100,100,100,100,100]]))
 
 
 print(pred)

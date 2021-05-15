@@ -1,5 +1,3 @@
-from typing import final
-import numpy as np
 import pandas as pd
 import math
 
@@ -8,8 +6,7 @@ def points_to_marks(points):
     
     marks = 0
     category = pd.read_excel('datasets\category_dataset.xlsx')
-    subjects =['Transform Calculus, Fourier Series And Numerical Techniques','Data Structures and Applications','Analog and Digital Electronics','Computer Organization','Software Engineering','Discrete Mathematical Structures','Analog and Digital Electronics Laboratory','Data Structures Laboratory','Constitution of India, Professional Ethics and Cyber Law']
-    predicted_marks = list()
+    subjects = ['Advanced Calculus And Numerical Methods','Engineering Chemistry','C Programming For Problem Solving','Basic Electronics','Elements Of Mechanical Engineering','Engineering Chemistry Laboratory','C Programming Laboratory','Technical English 2']
     final_marks = dict()
     for i in range(len(subjects)):
         final_marks[subjects[i]] = ""
@@ -17,8 +14,8 @@ def points_to_marks(points):
     
     if points < 0:
         points = 0
-    elif points > 400:
-        points = 400
+    elif points > 200:
+        points = 200
     
     for subject in subjects:
         for i in range(len(category)):
@@ -41,5 +38,5 @@ def points_to_marks(points):
     
     return final_marks
 
-# print(points_to_marks(370))
+
     

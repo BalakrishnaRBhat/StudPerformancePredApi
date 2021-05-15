@@ -20,21 +20,12 @@ class PerformancePrediction(Resource):
         parser.add_argument('f6')
         parser.add_argument('f7')
         parser.add_argument('f8')
-        parser.add_argument('f9')
-        parser.add_argument('f10')
-        parser.add_argument('f11')
-        parser.add_argument('f12')
-        parser.add_argument('f13')
-        parser.add_argument('f14')
-        parser.add_argument('f15')
-        parser.add_argument('f16')
 
         args = parser.parse_args()
         data = np.fromiter(args.values(), dtype=int)
         data = data.reshape(1, -1)
         
         points = model.predict(data)[0]
-        print(points)
         final_marks = points_to_marks(points)
 
         return final_marks, 200
