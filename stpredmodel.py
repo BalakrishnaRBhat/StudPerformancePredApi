@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score, mean_squared_error
 
 # get the dataset
@@ -18,8 +17,6 @@ y = dataset.iloc[:, -1].values
 # preparing train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-# pfobj = PolynomialFeatures(degree=2)
-# X_poly_train = pfobj.fit_transform(X)
 
 
 # training the model
